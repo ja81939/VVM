@@ -329,22 +329,21 @@ CONTAINS
 
       IF(NOSFX) THEN
       OPEN(UNIT=99,FILE='/media/wk2/b99209035/VVM/DATA/case3/gs_ctl_files/
-     &flux.dat',FORM='unformatted',STATUS='OLD',access='direct',
+     &wth.dat',FORM='unformatted',STATUS='OLD',access='direct',
      &recl=mi_glob*mj_glob*73)
-      READ(99,rec=1) FLUX
-     
-       
+      READ(99,rec=1) TH
+
+      OPEN(UNIT=99,FILE='/media/wk2/b99209035/VVM/DATA/case3/gs_ctl_files/
+     &wth.dat',FORM='unformatted',STATUS='OLD',access='direct',
+     &recl=mi_glob*mj_glob*73)
+      READ(99,rec=1) QV
+         
          DO 110 J=mjm,mjp
          DO 110 I=mim,mip
          UW(I,J)  = 0.
          WV(I,J)  = 0.
 !VARIABLE FROM KUO 
   
-         Ftot=340.*sin(2.*PI*ITT*DT/86400.)
-         BR = 4.*sin(2.*PI*ITT*DT/86400.)
-         SH = BR*Ftot/(1+BR)
-         LE = Ftot-SH        
-!land
          IF(ni_sbdm .eq. 1)then
             IF(I .le. (5.*mim+mip)/6)then
              WTH(I,J) = SH/(1004.5*PIBAR(1))
