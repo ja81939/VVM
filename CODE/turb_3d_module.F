@@ -328,6 +328,10 @@ CONTAINS
 !===================================================
 
       IF(NOSFX) THEN
+      OPEN(UNIT=99,FILE='/media/wk2/b99209035/VVM/DATA/case3/gs_ctl_files/
+     &flux.dat',FORM='unformatted',STATUS='OLD',access='direct',
+     &recl=mi_glob*mj_glob*73)
+      READ(99,rec=1) FLUX
      
        
          DO 110 J=mjm,mjp
