@@ -366,7 +366,18 @@ CONTAINS
   110    CONTINUE
       ELSE
 
-         IF ( itt==1 .OR. MOD ( ITT,NSFLUX ) .EQ. 1 ) CALL SFLUX_3D
+         IF ( itt==1 .OR. MOD ( ITT,NSFLUX ) .EQ. 1 ) THEN
+
+          CALL SFLUX_3D
+
+          WRITE(FILENAME,'(A12,I4.4,I3.3,A1,I3.3,A4)') &
+           'RUNDATA/FLUX',ITT,ni_sbdm+1,'_',nj_sbdm+1,'.dat'
+          OPEN(99,FILE=FILENAME,FORM='unformatted',STATUS='UNKNOWN')
+          WRITE(99) WTH,WQV
+          CLOSE(99)
+
+        ENDIF
+
 !      print*,"before call sflux_3d"
 !      print*,"ITT = ",ITT
 !      CALL SFLUX_3D ! call sflux every time step 
