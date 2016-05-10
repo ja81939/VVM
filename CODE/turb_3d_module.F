@@ -328,43 +328,23 @@ CONTAINS
 !===================================================
 
       IF(NOSFX) THEN
-      OPEN(UNIT=99,FILE='/media/wk2/b99209035/VVM/DATA/case3/gs_ctl_files/
-     &wth.dat',FORM='unformatted',STATUS='OLD',access='direct',
-     &recl=mi_glob*mj_glob*73)
-      READ(99,rec=1) TH
-
-      OPEN(UNIT=99,FILE='/media/wk2/b99209035/VVM/DATA/case3/gs_ctl_files/
-     &wth.dat',FORM='unformatted',STATUS='OLD',access='direct',
-     &recl=mi_glob*mj_glob*73)
-      READ(99,rec=1) QV
          
          DO 110 J=mjm,mjp
          DO 110 I=mim,mip
          UW(I,J)  = 0.
          WV(I,J)  = 0.
 !VARIABLE FROM KUO 
-  
-         IF(ni_sbdm .eq. 1)then
-            IF(I .le. (5.*mim+mip)/6)then
-             WTH(I,J) = SH/(1004.5*PIBAR(1))
-             WQV(I,J) = LE/2.5e6
-         
-            ELSE             
-!ocean
-             WTH(I,J) = 200./(1004.5*PIBAR(1))
-             WQV(I,J) = 20./2.5e6
-            ENDIF
-         ELSE
-             IF(I .ge. (mim+5.*mip)/6)then
-             WTH(I,J) = SH/(1004.5*PIBAR(1))
-             WQV(I,J) = LE/2.5e6
+      WRITE(FILENAME,'(A55,I4.4,I3.3,A1,I3.3,A4)')&
+      '/media/wk2/b99209035/VVM/DATA/case3_again/RUNDATA/FLUX/',ITT,
+     &ni_sbdm+1,'_',nj_sbdm+1,'.dat'
 
-            ELSE
-!ocean
-             WTH(I,J) = 200./(1004.5*PIBAR(1))
-             WQV(I,J) = 20./2.5e6
-             ENDIF   
-         ENDIF
+      OPEN(UNIT=99,FILE=FILENAME,FORM='unformatted',STATUS='OLD',
+     &access='direct',recl=mip*mjp)
+      READ(99,rec=1) TH
+
+      OPEN(UNIT=99,FILE=FILENAME,FORM='unformatted',STATUS='OLD',
+     &access='direct',recl=mi)
+      READ(99,rec=1) QV
 
   110    CONTINUE
       ELSE
