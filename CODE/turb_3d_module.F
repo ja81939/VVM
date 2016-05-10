@@ -53,7 +53,7 @@ CONTAINS
 ! Argument list variables
       INTEGER (KIND=int_kind), INTENT(IN) ::   &
          ITT     ! time step count
-
+      CHARACTER(70) FILENAME
 #if defined (DIFFUSION)
 ! local variables     
       REAL (KIND=dbl_kind) :: &
@@ -333,20 +333,17 @@ CONTAINS
          DO 110 I=mim,mip
          UW(I,J)  = 0.
          WV(I,J)  = 0.
+   110 CONTINUE
 !VARIABLE FROM KUO 
       WRITE(FILENAME,'(A55,I4.4,I3.3,A1,I3.3,A4)')&
       '/media/wk2/b99209035/VVM/DATA/case3_again/RUNDATA/FLUX/',ITT,
      &ni_sbdm+1,'_',nj_sbdm+1,'.dat'
 
       OPEN(UNIT=99,FILE=FILENAME,FORM='unformatted',STATUS='OLD',
-     &access='direct',recl=mip*mjp)
-      READ(99,rec=1) TH
-
-      OPEN(UNIT=99,FILE=FILENAME,FORM='unformatted',STATUS='OLD',
-     &access='direct',recl=mi)
-      READ(99,rec=1) QV
-
-  110    CONTINUE
+     &access='direct',recl=(mip-1)*(mjp-1))
+      READ(99,rec=1) WTH
+      READ(99,rec=2) WQV
+      CLOSE(99)
       ELSE
 
          IF ( itt==1 .OR. MOD ( ITT,NSFLUX ) .EQ. 1 ) CALL SFLUX_3D
