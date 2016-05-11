@@ -6,7 +6,7 @@
 
 set echo  # echoes the commands
 
-set expname = case3_noLSM_RADICODE
+set expname = case3_noLSM_RADCODE
 
 # hardscrabble configuration
 set subdir = '../..'
@@ -48,7 +48,7 @@ cat > definesld.com << 'END1'
 #define PHYSICS
 #define MICROCODE
 #define PARALLELIO
-#define RADICODE
+#define RADCODE
 'END1'
 cat definesld.com
 
