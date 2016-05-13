@@ -381,7 +381,7 @@ CONTAINS
           PRINT*,'WTH check in case3_again *****************************'
     
           IF (my_task .eq. 0 ) THEN
-           PRINT*,"ITT = " ITT
+           PRINT*,"ITT = ",ITT
            PRINT*,WTH(10,10)
           endif
  
