@@ -372,12 +372,19 @@ CONTAINS
           CALL SFLUX_3D
 
           WRITE(FILENAME,'(A12,I4.4,I3.3,A1,I3.3,A4)') &
-           'RUNDATA/TMP',ITT,ni_sbdm+1,'_',nj_sbdm+1,'.dat'
+           'RUNDATA/TM',ITT,ni_sbdm+1,'_',nj_sbdm+1,'.dat'
           
           OPEN(8763,FILE=FILENAME,FORM='unformatted',STATUS='UNKNOWN')
           WRITE(8763) WTH,WQV
           CLOSE(8763)
-
+     
+          PRINT*,'WTH check in case3_again *****************************'
+    
+          IF (my_task .eq. 0 ) THEN
+           PRINT*,"ITT = " ITT
+           PRINT*,WTH(10,10)
+          endif
+ 
         ENDIF
 
 !      print*,"before call sflux_3d"
