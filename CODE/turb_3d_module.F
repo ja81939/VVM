@@ -346,7 +346,10 @@ CONTAINS
         READ(99) WTH,WQV
         CLOSE(99)
        ENDIF
-     
+      
+      PRINT*,'WTH check *****************************'
+      IF (my_task .eq. 0 ) PRINT*,WTH(10,10)
+          
       ELSE
 
       IF ( itt==1 .OR. MOD ( ITT,NSFLUX ) .EQ. 1 ) CALL SFLUX_3D
