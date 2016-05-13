@@ -1010,6 +1010,13 @@ CONTAINS
       STD_TM5(I,J,7)=STD_TM5(I,J,7)+OLR(I,J)       *  dtfac
  1226 CONTINUE
 
+      PRINT*," cheack the STD_TM5 & WTH & WQV in case3_again***********"
+      PRINT*,"ITT = ",ITT
+      PRINT*,"STD_TM5(10,10,3) = ",STD_TM5(10,10,3)
+      PRINT*,"WTH(10,10) = ",WTH(10,10)
+      PRINT*,"STD_TM5(10,10,4) = ",STD_TM5(10,10,4)
+      PRINT*,"WQV(10,10) = ",WQV(10,10)
+
 
 #if defined (DIFFUSION)
 #if defined (LSM)
