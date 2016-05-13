@@ -347,9 +347,12 @@ CONTAINS
         CLOSE(99)
        ENDIF
       
-      PRINT*,'WTH check *****************************'
-      IF (my_task .eq. 0 ) PRINT*,WTH(10,10)
-          
+      PRINT*,'WTH check in cae3_noLSM_PADCODE *********'
+      IF (my_task .eq. 0 ) THEN 
+         PRINT*,"ITT = ",ITT
+         PRINT*,WTH(10,10)
+      endif
+    
       ELSE
 
       IF ( itt==1 .OR. MOD ( ITT,NSFLUX ) .EQ. 1 ) CALL SFLUX_3D
