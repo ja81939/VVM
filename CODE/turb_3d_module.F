@@ -333,10 +333,8 @@ CONTAINS
          DO 110 I=mim,mip
          UW(I,J)  = 0.
          WV(I,J)  = 0.
-!         WTH(I,J) = 0.
-!         WQV(I,J) = 0.
    110 CONTINUE
-!VARIABLE FROM KUO 
+!SFLUX DATA FROM URBAN LAND TYPE CASE
        IF ( itt==1 .OR. MOD ( ITT,NSFLUX ) .EQ. 1 )THEN
         WRITE(FILENAME,'(A54,I4.4,I3.3,A1,I3.3,A4)')&
         '/media/wk2/b99209035/VVM/DATA/case3_again/RUNDATA/FLUX',ITT&
@@ -346,12 +344,6 @@ CONTAINS
         READ(99) WTH,WQV
         CLOSE(99)
        ENDIF
-      
-!      PRINT*,'WTH check in cae3_noLSM_PADCODE *********'
-!      IF (my_task .eq. 0 ) THEN 
-!         PRINT*,"ITT = ",ITT
-!         PRINT*,WTH(10,10)
-!      endif
     
       ELSE
 
