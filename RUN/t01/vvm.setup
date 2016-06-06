@@ -6,7 +6,7 @@
 
 set echo  # echoes the commands
 
-set expname = case3_noLSM_RADCODE
+set expname = case3_prescribe
 
 # hardscrabble configuration
 set subdir = '../..'

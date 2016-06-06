@@ -329,20 +329,15 @@ CONTAINS
 
       IF(NOSFX) THEN
          
-         DO 110 J=mjm,mjp
-         DO 110 I=mim,mip
-         UW(I,J)  = 0.
-         WV(I,J)  = 0.
-   110 CONTINUE
-!SFLUX DATA FROM URBAN LAND TYPE CASE
+!SFLUX DATA FROM URBAN LAND TYPE CASE (ADD UW,WV momentum term)
        IF ( itt==1 .OR. MOD ( ITT,NSFLUX ) .EQ. 1 )THEN
-        WRITE(FILENAME,'(A54,I4.4,I3.3,A1,I3.3,A4)')&
-        '/media/wk2/b99209035/VVM/DATA/case3_again/RUNDATA/FLUX',ITT&
+        WRITE(FILENAME,'(A57,I4.4,I3.3,A1,I3.3,A4)')&
+        '/media/wk2/b99209035/VVM/DATA/case3_again_new/RUNDATA/NEW',ITT&
         ,ni_sbdm+1,'_',nj_sbdm+1,'.dat'
 
-        OPEN(UNIT=99,FILE=FILENAME,FORM='unformatted',STATUS='OLD')
-        READ(99) WTH,WQV
-        CLOSE(99)
+        OPEN(UNIT=8763,FILE=FILENAME,FORM='unformatted',STATUS='OLD')
+        READ(8763) UW,WV,WTH,WQV
+        CLOSE(8763)
        ENDIF
     
       ELSE
