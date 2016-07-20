@@ -375,17 +375,11 @@ CONTAINS
            'RUNDATA/NEW',ITT,ni_sbdm+1,'_',nj_sbdm+1,'.dat'
           
           OPEN(8763,FILE=FILENAME,FORM='unformatted',STATUS='UNKNOWN')
-          WRITE(8763) UW,WV,WTH,WQV
+          WRITE(8763) UW,WV,WTH,WQV,TG
           CLOSE(8763)
      
-          PRINT*,'WTH check in case3_again *****************************'
-    
-          IF (my_task .eq. 0 ) THEN
-           PRINT*,"ITT = ",ITT
-           PRINT*,WTH(10,10)
-          endif
- 
-        ENDIF
+  
+         ENDIF
 
 !      print*,"before call sflux_3d"
 !      print*,"ITT = ",ITT

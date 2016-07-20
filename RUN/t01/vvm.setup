@@ -36,9 +36,9 @@ cat > COMMENTS << 'END'
 initial profile from Kuo
 U3DX is the average wind setting from Baker,2001
 land and ocean position is setting from Baker,2001
-land and ocean flux setting from Kuo
+land and ocean flux were desided by land_module
+write out the WTH,WQV,UW,WV,TG to prescribe_case
 z_coordinate from Kuo
-
 'END'
 cat COMMENTS
 
