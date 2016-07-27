@@ -336,7 +336,7 @@ CONTAINS
         ,ni_sbdm+1,'_',nj_sbdm+1,'.dat'
 
         OPEN(UNIT=8763,FILE=FILENAME,FORM='unformatted',STATUS='OLD')
-        READ(8763) UW,WV,WTH,WQV
+        READ(8763) UW,WV,WTH,WQV,TG
         CLOSE(8763)
        ENDIF
     
