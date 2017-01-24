@@ -331,8 +331,8 @@ CONTAINS
          
 !SFLUX DATA FROM URBAN LAND TYPE CASE (ADD UW,WV momentum term)
        IF ( itt==1 .OR. MOD ( ITT,NSFLUX ) .EQ. 1 )THEN
-        WRITE(FILENAME,'(A64,I4.4,I3.3,A1,I3.3,A4)')&
-        '/media/wk2/b99209035/VVM/DATA/case3_grass_again_dry/RUNDATA/GRA2',ITT&
+        WRITE(FILENAME,'(A65,I4.4,I3.3,A1,I3.3,A4)')&
+        '/media/wk2/b99209035/VVM/DATA/case3_grass_again_dry2/RUNDATA/GRA2',ITT&
         ,ni_sbdm+1,'_',nj_sbdm+1,'.dat'
 
         OPEN(UNIT=8763,FILE=FILENAME,FORM='unformatted',STATUS='OLD')
