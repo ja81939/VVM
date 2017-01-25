@@ -6,7 +6,7 @@
 
 set echo  # echoes the commands
 
-set expname = case3_again_new
+set expname = case3_Pasture
 
 # hardscrabble configuration
 set subdir = '../..'
@@ -33,6 +33,7 @@ rm *
 #rm -rf RUNDATA
 
 cat > COMMENTS << 'END'
+land use turn to wetter type (Pasture)
 initial profile from Kuo
 U3DX is the average wind setting from Baker,2001
 land and ocean position is setting from Baker,2001

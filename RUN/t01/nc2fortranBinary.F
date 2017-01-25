@@ -215,7 +215,7 @@ C      TMP = MAX(TMP,DATA(IP,JP))
       DO 500 I = 1,MI_GLOB
   
       if(abs(I-(MI_GLOB/2)) .LE. (MI_GLOB/6)) then
-      LU(I,J) = 1
+      LU(I,J) = 2
       alb(I,J) = 15.
       grf(I,J) = 10.
       lai(I,J) = 4.

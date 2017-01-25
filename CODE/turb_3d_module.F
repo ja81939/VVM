@@ -371,8 +371,8 @@ CONTAINS
 
           CALL SFLUX_3D
 
-          WRITE(FILENAME,'(A11,I4.4,I3.3,A1,I3.3,A4)') &
-           'RUNDATA/NEW',ITT,ni_sbdm+1,'_',nj_sbdm+1,'.dat'
+          WRITE(FILENAME,'(A12,I4.4,I3.3,A1,I3.3,A4)') &
+           'RUNDATA/FLUX',ITT,ni_sbdm+1,'_',nj_sbdm+1,'.dat'
           
           OPEN(8763,FILE=FILENAME,FORM='unformatted',STATUS='UNKNOWN')
           WRITE(8763) UW,WV,WTH,WQV,TG
