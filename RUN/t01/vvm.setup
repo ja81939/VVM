@@ -6,7 +6,7 @@
 
 set echo  # echoes the commands
 
-set expname = case3_Pasture_dry
+set expname = case3_Pasture_organic_dry
 
 # hardscrabble configuration
 set subdir = '../..'

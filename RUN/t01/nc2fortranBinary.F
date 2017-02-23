@@ -222,7 +222,7 @@ C      TMP = MAX(TMP,DATA(IP,JP))
       SHDMAX(I,J) = 10.
       SHDMIN(I,J) = 10.
       SLOPE(I,J) = 1
-      SOIL(I,J) = 1
+      SOIL(I,J) = 13
 
       else
       LU(I,J) = 16
