@@ -53,7 +53,7 @@ CONTAINS
 ! Argument list variables
       INTEGER (KIND=int_kind), INTENT(IN) ::   &
          ITT     ! time step count
-      CHARACTER(82) FILENAME
+      CHARACTER(90) FILENAME
 #if defined (DIFFUSION)
 ! local variables     
       REAL (KIND=dbl_kind) :: &
@@ -331,7 +331,7 @@ CONTAINS
          
 !SFLUX DATA FROM URBAN LAND TYPE CASE (ADD UW,WV momentum term)
        IF ( itt==1 .OR. MOD ( ITT,NSFLUX ) .EQ. 1 )THEN
-        WRITE(FILENAME,'(A60,I4.4,I3.3,A1,I3.3,A4)')&
+        WRITE(FILENAME,'(A68,I4.4,I3.3,A1,I3.3,A4)')&
         '/media/wk2/b99209035/VVM/DATA/case3_Pasture_organic_dry/RUNDATA/FLUX',ITT&
         ,ni_sbdm+1,'_',nj_sbdm+1,'.dat'
 
